@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    background-image: linear-gradient(100deg, #7FDEFF, #33CC33);
+    box-sizing: border-box;
+}
+
+h1,
+form {
+	display: flex;
+	color: white;
+	font-size: 3rem;
+	font-weight: 50;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	min-height: 21vh; 
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.title{
+	color: black;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+form input,
+form button {
+	padding: 0.5rem;
+	font-size: 1.7rem;
+	border: none;
+	background: white;
+	font-family: 'Sansita Swashed', cursive;
+}
+
+.todo-container{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+	list-style: none;
+	min-width: 25%;
+}
+
+.todo {
+	background: white;
+	margin: 1rem;
+	padding-left: 0.6rem;
+	font-size: 1.5rem;
+	font-family: 'Sansita Swashed', cursive;
+	display: flex;
+	justify-content: space-between;
+	transition: all 0.5s ease;
+}
+
+form button {
+	color: #33CC33;
+	background: white;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+form button:hover {
+	color: white;
+	background:  #33CC33;
+}
+
+.todo li {
+	flex: 1;
+}
+
+.checked-button,
+.delete-button {
+	background: white;
+	color: #33CC33;
+	border: none;
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+.delete-button {
+	background: white;
+	color: red;
+}
+.checked-button:hover,
+.delete-button:hover {
+	background: #33CC33;
+	color: white;
+	border: none;
+	padding: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.delete-button:hover {
+	background: red;
+	color: white;
+}
+
+.todo-item {
+	padding-right: 0.6rem;
+}
+
+.fa-check-square, .fa-times-square {
+	pointer-events: none;
+}
+
+.checked {
+	text-decoration: line-through;
+	opacity: 0.6;
+}
