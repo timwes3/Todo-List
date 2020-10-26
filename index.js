@@ -30,7 +30,6 @@ function addTodo(event){
 			checked: false,
 			text: todoInput.value
 		}
-		todo.date = "today"
 		saveLocalTodos(todo);
 		//Check button
 		const checkedButton = document.createElement('button');		
@@ -59,7 +58,10 @@ function deleteAndCheck(event){
 		let todos = JSON.parse(localStorage.getItem("todos"));
 		todos.splice(todoIndex, 1);
 		localStorage.setItem("todos", JSON.stringify(todos));
-		todo.remove();
+		todo.classList.add("drop");
+		todo.addEventListener( "transitionend", function(){
+			todo.remove()
+		})
 	}
 	//Check todo
 	if (item.classList[0] === "checked-button") {
@@ -116,13 +118,4 @@ function getTodos(){
 		if (todo.checked) todoDiv.classList.toggle("checked");
 		todoList.appendChild(todoDiv);	
 	})
-}
-
-//Remove local todos
-
-function removeLocalTodos(todo) {
-	const todoIndex = [...todo.parentElement.children].indexOf(todo);
-	let todos = JSON.parse(localStorage.getItem("todos"));
-	todos.splice(todoIndex, 1);
-	localStorage.setItem("todos", JSON.stringify(todos));
 }
